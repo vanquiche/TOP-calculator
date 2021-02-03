@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: grey;
+}
+#wrapper {
+  margin: auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: lightblue;
+  box-sizing: border-box;
+  width: 400px;
+  height: 500px;
+  justify-content: center;
+  padding: 10px;
+}
+.displayContainer {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  height: 50px;
+  width: 370px;
+  background-color: white;
+}
+.numberBtn {
+  height: 80px;
+  width: 80px;
+}
+
+.row1 {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.row2 {
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+.row3 {
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+.bottom {
+  grid-row-start: 6;
+  grid-row-end: 7;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.row4 {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.operatorBtn {
+  height: 80px;
+  width: 80px;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.btn:hover {
+  cursor: pointer;
+}

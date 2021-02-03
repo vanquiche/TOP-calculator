@@ -7,11 +7,39 @@
     <title></title>
     <meta name='description' content=''>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href=''>
+    <link rel='stylesheet' href='style.css'>
   </head>
   <body>
+    <div id='wrapper'>
 
+      <div id='previousOperation' class='displayContainer' data-pre-oper class='previous-operand'></div>
+      <div id='currentOperation' class='displayContainer' data-cur-oper class='current-operand'></div>
+      <div id='tempOperation' class='displayContainer' data-cur-oper class='current-operand'></div>
+      <button data-number class='numberBtn row1' value='1'>1</button>
+      <button data-number class='numberBtn row1' value='2'>2</button>
+      <button data-number class='numberBtn row1' value='3'>3</button>
+      <!--row 2 buttons-->
+      <button data-number class='numberBtn row2' value='4'>4</button>
+      <button data-number class='numberBtn row2' value='5'>5</button>
+      <button data-number class='numberBtn row2' value='6'>6</button>
+      <!--row 3 buttons-->
+      <button data-number class='numberBtn row3' value='7'>7</button>
+      <button data-number class='numberBtn row3' value='8'>8</button>
+      <button data-number class='numberBtn row3' value='9'>9</button>
+      <!--middle bottom -->
+      <button data-number class='numberBtn middle twoSpan' value='0'>0</button>
+      <!--operator buttons-->
+      <button data-allClear id='clear' class ='operatorBtn row4'>AC</button>
+      <button data-operator id='add' class='operatorBtn row4' data-action='add'>+</button>
+      <button data-operator id='subtract' class='operatorBtn row4' dat-action='subtract'>-</button>
+      <button data-operator id='subtract' class='operatorBtn row4' dat-action='multiply'>X</button>
+      <button data-operator id='divide' class='operatorBtn row4' dat-action='divide'>/</button>
+      <button data-equal id='equal' class='operatorBtn row4'>=</button>
+      </div>
 
-    <script src=''></script>
+      <p id='aValue'></p>
+      <p id='bValue'></p>
+    </body>
+    <script src='script3.js'></script>
   </body>
 </html>
