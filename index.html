@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title></title>
-    <meta name='description' content=''>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href='style.css'>
-  </head>
-  <body>
-    <div id='wrapper'>
 
-      <div data-pre-oper id='previousOperation' class='displayContainer' class='previous-operand'></div>
-      <div data-cur-oper id='currentOperation' class='displayContainer' class='current-operand'></div>
-      <div data-temp-oper id='tempOperation' class='displayContainer' class='current-operand'></div>
-      <!--row 1 buttons -->
-      <button data-number class='numberBtn row1' value='1'>1</button>
-      <button data-number class='numberBtn row1' value='2'>2</button>
-      <button data-number class='numberBtn row1' value='3'>3</button>
-      <!--row 2 buttons-->
-      <button data-number class='numberBtn row2' value='4'>4</button>
-      <button data-number class='numberBtn row2' value='5'>5</button>
-      <button data-number class='numberBtn row2' value='6'>6</button>
-      <!--row 3 buttons-->
-      <button data-number class='numberBtn row3' value='7'>7</button>
-      <button data-number class='numberBtn row3' value='8'>8</button>
-      <button data-number class='numberBtn row3' value='9'>9</button>
-      <!--middle bottom -->
-      <button data-number class='numberBtn' value='0'>0</button>
-      <!--operator buttons-->
-      <button data-allClear id='clear' class ='operatorBtn row4'>AC</button>
-      <button data-operator id='add' class='operatorBtn row4' data-action='add'>+</button>
-      <button data-operator id='subtract' class='operatorBtn row4' dat-action='subtract'>-</button>
-      <button data-operator id='subtract' class='operatorBtn row4' dat-action='multiply'>X</button>
-      <button data-operator id='divide' class='operatorBtn row4' dat-action='divide'>/</button>
-      <button data-equal id='equal' class='operatorBtn row4'>=</button>
-      </div>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title></title>
+  <meta name='description' content=''>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='style.css'>
+</head>
 
-      <p id='aValue'></p>
-      <p id='bValue'></p>
-    </body>
-    <script src='script3.js'></script>
-  </body>
+<body>
+  <div id='wrapper'>
+    <div class='displayContainer'>
+      <div data-pre-oper id='previousOperation' class='display right'>0</div>
+      <div data-cur-oper id='currentOperation' class='display right largeTxt'>0</div>
+      <div data-temp-oper id='tempOperation' class='display'></div>
+    </div>
+    <!--row 1 buttons -->
+    <button data-number class='numberBtn' value='1'>1</button>
+    <button data-number class='numberBtn' value='2'>2</button>
+    <button data-number class='numberBtn' value='3'>3</button>
+    <button data-allClear id='clear' class='operatorBtn'>AC</button>
+    <button data-delete id='delete' class='operatorBtn'>DEL</button>
+    <!--row 2 buttons-->
+    <button data-number class='numberBtn' value='4'>4</button>
+    <button data-number class='numberBtn' value='5'>5</button>
+    <button data-number class='numberBtn' value='6'>6</button>
+    <button data-operator id='add' class='operatorBtn row4' data-action='add'>+</button>
+    <button data-operator id='subtract' class='operatorBtn' dat-action='subtract'>-</button>
+    <!--row 3 buttons-->
+    <button data-number class='numberBtn' value='7'>7</button>
+    <button data-number class='numberBtn' value='8'>8</button>
+    <button data-number class='numberBtn' value='9'>9</button>
+    <button data-operator id='subtract' class='operatorBtn' dat-action='multiply'>*</button>
+    <button data-operator id='divide' class='operatorBtn' dat-action='divide'>/</button>
+    <!--row 4 buttons -->
+    <button data-number class='numberBtn' value='.'>.</button>
+    <button data-number class='numberBtn' value='0'>0</button>
+    <button data-equal id='equal' class='span3'>=</button>
+  </div>
+</body>
+<script src='script3.js'></script>
+</body>
+
 </html>
