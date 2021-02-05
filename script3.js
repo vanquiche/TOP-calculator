@@ -2,6 +2,7 @@ const numberBtns = document.querySelectorAll('[data-number]');
 const operatorBtns = document.querySelectorAll('[data-operator]');
 const equalBtn = document.querySelector('[data-equal]');
 const allClearBtn = document.querySelector('[data-allClear]');
+const deleteBtn = document.querySelector('[data-delete]');
 const currentOperation = document.querySelector('[data-cur-oper]');
 const previousOperation = document.querySelector('[data-pre-oper]');
 const resultOperation = document.querySelector('[data-temp-oper]');
@@ -33,17 +34,53 @@ operatorBtns.forEach(operator => {
     return}
     haveDecimal = false;
     const operationName = e.target.innerText;
-
     if(disNum1 && disNum2 && lastOperator) {
-      mathOperation(operationName);
+      mathOperation();
     } else {
       result = parseFloat(disNum1);
     }
     clearVar(operationName);
     lastOperator = operationName;
-    //console.log(result);
   })
 })
+
+equalBtn.addEventListener('click', (e) => {
+  if (!disNum1 || !disNum2) {
+    console.log('no values to be equaled');
+    return;
+  }
+  console.log('equal is true');
+  haveDecimal = true;
+  mathOperation();
+  clearVar();
+  resultOperation.innerText = '';
+  currentOperation.innerText = result;
+  disNum2 = '';
+  disNum1 = result;
+})
+
+allClearBtn.addEventListener('click', (e) => {
+  console.log('all clear');
+  haveDecimal = false;
+  disNum1 = '';
+  disNum2 = '';
+  currentOperation.innerText = '';
+  previousOperation.innerText = '';
+  resultOperation.innerText = '';
+})
+
+deleteBtn.addEventListener('click', (e) => {
+  if (!disNum1) return;
+  haveDecimal = false;
+  deleteNum();
+  console.log('delete');
+
+})
+function deleteNum() {
+  let deletedStr = disNum1.slice(0, disNum1.length - 1);
+  currentOperation.innerText = deletedStr;
+  disNum1 = deletedStr;
+}
 
 function clearVar(name = '') {
   disNum2 += disNum1 + ' ' + name + ' ';
