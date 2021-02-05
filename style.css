@@ -2,31 +2,37 @@
   box-sizing: border-box;
 }
 body {
-  background-color: grey;
+  background-color: #F1EEEE;
 }
 #wrapper {
-  margin: auto;
+  margin: 150px auto 0 auto;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 15px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  background-color: lightblue;
+  background-color: #F1EBEA;
   box-sizing: border-box;
   width: 430px;
   height: 500px;
   justify-content: center;
   padding: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px #E5D6D2;
 }
 .displayContainer {
   grid-column: 1 / 6;
-  padding: 0 5px 0 5px;
-  height: 90px;
+  height: 80px;
   width: 410px;
-  background-color: white;
+  background-color: #DEDECF;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 1px #D2D2BC;
 }
 .display {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px 8px 0 8px;
   display: block;
-  height: 30px;
+  height: 27px;
+  color: #4A4A45;
 }
 .right {
   text-align: right;
@@ -35,9 +41,38 @@ body {
   grid-column: 3 / span 3;
 }
 .largeTxt {
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
-.numberBtn {
+.previewTxt {
+  color: #86867E;
+}
+.blueTxt {
+  color: #467DDD;
+}
+.greenTxt {
+  color: #89B8B4;
+}
+.orangeTxt {
+  color: #FF7C4D;
+}
+.drkGreenTxt {
+  color: #1BD096;
+}
+.yellowTxt {
+  color: #F2C564;
+}
+.redTxt {
+  color: #F53D3D;
+}
+.btn {
   font-size: 1em;
+  font-family: Montserrat;
   text-align: center;
+  border: none;
+  box-shadow: 2px 2px 2px #E5D6D2;
+  border-radius: 5px;
+  background-color: #F3F2F1;
+}
+.btn:hover {
+  cursor: pointer;
 }
