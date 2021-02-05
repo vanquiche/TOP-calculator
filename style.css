@@ -20,6 +20,7 @@ body {
   box-shadow: 1px 1px 8px #E5D6D2;
 }
 .displayContainer {
+  margin-top: 20px;
   grid-column: 1 / 6;
   height: 80px;
   width: 410px;
@@ -69,10 +70,22 @@ body {
   font-family: Montserrat;
   text-align: center;
   border: none;
-  box-shadow: 2px 2px 2px #E5D6D2;
+  box-shadow: 1px 3px 4px #E5D6D2;
   border-radius: 5px;
   background-color: #F3F2F1;
+  outline: none;
+  transition: 0.2s ease;
 }
 .btn:hover {
   cursor: pointer;
+  background-color: #F8F7F6;
+}
+.btn:active {
+  box-shadow: none;
+}
+#info {
+  font-family: Montserrat;
+  color: #89B8B4;
+  padding-top: 60px;
+  text-align: center;
 }

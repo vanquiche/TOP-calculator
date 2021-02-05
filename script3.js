@@ -10,15 +10,15 @@ const resultOperation = document.querySelector('[data-temp-oper]');
 let disNum1 = '';
 // var for previous operation
 let disNum2 = '';
-// result of operations num1 and num2
+// total to be displayed
 let result = '';
 let lastOperator = '';
 let haveDecimal = false;
 
-
 // for all number buttons
 numberBtns.forEach(button => {
   button.addEventListener('click', (e) => {
+    if (currentOperation.innerText.length >= 12) return;
     if (e.target.innerText === '.' && !haveDecimal) haveDecimal = true;
     else if (e.target.innerText === '.' && haveDecimal) return;
     disNum1 += e.target.innerText;
@@ -26,15 +26,15 @@ numberBtns.forEach(button => {
     //console.log(e.target.innerText);
   });
 });
-
+// + - /  x
 operatorBtns.forEach(operator => {
   operator.addEventListener('click', (e) => {
-    if(!disNum1) {
-    console.log('no num selected')
-    return}
+    if (!disNum1) {
+      return;
+    }
     haveDecimal = false;
     const operationName = e.target.innerText;
-    if(disNum1 && disNum2 && lastOperator) {
+    if (disNum1 && disNum2 && lastOperator) {
       mathOperation();
     } else {
       result = parseFloat(disNum1);
@@ -46,10 +46,8 @@ operatorBtns.forEach(operator => {
 
 equalBtn.addEventListener('click', (e) => {
   if (!disNum1 || !disNum2) {
-    console.log('no values to be equaled');
     return;
   }
-  console.log('equal is true');
   haveDecimal = true;
   mathOperation();
   clearVar();
@@ -65,17 +63,16 @@ allClearBtn.addEventListener('click', (e) => {
   disNum1 = '';
   disNum2 = '';
   currentOperation.innerText = '';
-  previousOperation.innerText = '';
-  resultOperation.innerText = '';
+  previousOperation.innerText = 0;
+  resultOperation.innerText = 0;
 })
 
 deleteBtn.addEventListener('click', (e) => {
   if (!disNum1) return;
   haveDecimal = false;
   deleteNum();
-  console.log('delete');
-
 })
+
 function deleteNum() {
   let deletedStr = disNum1.slice(0, disNum1.length - 1);
   currentOperation.innerText = deletedStr;
@@ -94,19 +91,14 @@ function mathOperation() {
   disNum1.replace(/[^0-9]/g, '');
   if (lastOperator === '+') {
     result = parseFloat(result) + parseFloat(disNum1);
-    console.log('add');
-    //alert(a);
   }
   else if (lastOperator === '-') {
     result = parseFloat(result) - parseFloat(disNum1);
-    console.log('minus');
   }
   else if (lastOperator === '/') {
     result = parseFloat(result) / parseFloat(disNum1);
-    console.log('divide');
   }
-  else if (lastOperator === '*') {
+  else if (lastOperator === 'x') {
     result = parseFloat(result) * parseFloat(disNum1);
-    console.log('multiply');
   }
 }
